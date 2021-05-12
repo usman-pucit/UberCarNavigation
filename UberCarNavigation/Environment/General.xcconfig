@@ -1,0 +1,10 @@
+//
+//  General.xcconfig
+//  UberCarNavigation
+//
+//  Created by Muhammad Usman on 10/05/2021.
+//
+//
+
+
+GOOGLE_SERVICES_API     =  GOOGLE_SERVICES_API_HERE

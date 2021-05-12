@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BZO-RZ-Lp6">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Car Navigation View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="CarNavigationViewController" id="BZO-RZ-Lp6" customClass="CarNavigationViewController" customModule="UberCarNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-OX-0uj" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-Mb-9Ol">
+                                <rect key="frame" x="323.5" y="605.5" width="31.5" height="31.5"/>
+                                <state key="normal" image="focus"/>
+                                <connections>
+                                    <action selector="recenterMap:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="7bY-43-vEw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZZ-BN-hky">
+                                <rect key="frame" x="20" y="581" width="9" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzt-LL-mpO">
+                                <rect key="frame" x="20" y="613" width="9" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xzt-LL-mpO" firstAttribute="bottom" secondItem="KhO-Mb-9Ol" secondAttribute="bottom" id="0r4-am-Plf"/>
+                            <constraint firstItem="XLE-OX-0uj" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" id="1H2-TV-k3I"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="KhO-Mb-9Ol" secondAttribute="bottom" constant="30" id="4S8-d7-jjt"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="XLE-OX-0uj" secondAttribute="trailing" id="8Lf-OL-vLF"/>
+                            <constraint firstItem="XLE-OX-0uj" firstAttribute="leading" secondItem="ZJJ-0O-gcw" secondAttribute="leading" id="Akg-nN-iIq"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="KhO-Mb-9Ol" secondAttribute="trailing" constant="20" id="I9k-Td-viL"/>
+                            <constraint firstAttribute="bottom" secondItem="XLE-OX-0uj" secondAttribute="bottom" id="k54-gP-83V"/>
+                            <constraint firstItem="xzt-LL-mpO" firstAttribute="top" secondItem="UZZ-BN-hky" secondAttribute="bottom" constant="8" id="mJv-rR-ZGy"/>
+                            <constraint firstItem="xzt-LL-mpO" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="20" id="mRj-Sk-Ema"/>
+                            <constraint firstItem="UZZ-BN-hky" firstAttribute="leading" secondItem="xzt-LL-mpO" secondAttribute="leading" id="nUs-PV-GwY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelDistance" destination="xzt-LL-mpO" id="ynl-Sr-RZc"/>
+                        <outlet property="labelTime" destination="UZZ-BN-hky" id="2kd-h5-Up9"/>
+                        <outlet property="mapView" destination="XLE-OX-0uj" id="xdL-AJ-bBG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.39999999999998" y="-188.45577211394306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="focus" width="31.5" height="31.5"/>
+    </resources>
+</document>
